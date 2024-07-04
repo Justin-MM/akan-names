@@ -18,6 +18,16 @@ const femaleAkanNames = [
     "Ama"
 ];
 
+const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+]
+
 const akanNames = {
     male: maleAkanNames,
     female: femaleAkanNames
@@ -34,7 +44,7 @@ const getAkanName = (gender, dateOfBirth) => {
         }
         const birthday = new Date(parsedDate[2], parsedDate[1] - 1, parsedDate[0]);
         const dayOfWeek = birthday.getDay();
-        return akanNames[gender.toLowerCase()][dayOfWeek];
+        return [days[dayOfWeek], akanNames[gender.toLowerCase()][dayOfWeek]];
     }
 
     return false;
@@ -50,8 +60,12 @@ const handleAkanQuerySubmit = (event) => {
     event.preventDefault();
     const gender = document.querySelector('input[name="gender"]:checked').value;
     const dateOfBirth = document.getElementById('birthdate').value;
-    getAkanName(gender, dateOfBirth);
-
+    const response = getAkanName(gender, dateOfBirth);
+    console.log(response);
+    if (response) {
+        document.querySelector("span#dayOfTheWeekText").innerHTML = response[0];
+        document.querySelector("span#akan-name").innerHTML = response[1];
+    }    
     document.querySelector("input#birthdate").value = null;
     document.querySelector('input[name="gender"]:checked').checked=false;
 }
