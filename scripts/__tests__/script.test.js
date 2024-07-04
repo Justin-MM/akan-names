@@ -1,12 +1,11 @@
-import getAkanName from "../script";
-import '@testing-library/jest-dom';
+const getAkanName = require('./../script');
 
-it('Test male akan name is returned correctly', () => {
+test('male akan name is returned correctly', () => {
     const akanName = getAkanName("male", "30/07/2024");
     expect(akanName).toBe("Kwabena");
 });
 
-it('Test female akan name is returned correctly', () => {
+test('female akan name is returned correctly', () => {
     const akanName = getAkanName("female", "09/01/1960");
     expect(akanName).toBe("Ama");
 });
