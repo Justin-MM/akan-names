@@ -24,7 +24,7 @@ const akanNames = {
 };
 
 const getAkanName = (gender, dateOfBirth) => {
-
+    console.log(`received input gender: ${gender} and dateOfBirth: ${dateOfBirth}`);
     // validate input
     if (gender && (gender === "Male" || gender === "Female")) {
         const parsedDate = parseDateOfBirth(dateOfBirth);
@@ -40,9 +40,22 @@ const getAkanName = (gender, dateOfBirth) => {
     return false;
 }
 
-const parseDateOfBirth = (dateOfBirth) => {    
-    const dateStringArray = dateOfBirth.split("/");
-    return [parseInt(dateStringArray[0]), parseInt(dateStringArray[1]), parseInt(dateStringArray[2])];
+const parseDateOfBirth = (dateOfBirth) => {
+    const dateStringArray = dateOfBirth.split("-");
+    return [parseInt(dateStringArray[2]), parseInt(dateStringArray[1]), parseInt(dateStringArray[0])];
 }
 
+// handle submit click
+const handleAkanQuerySubmit = (event) => {
+    event.preventDefault();
+    getAkanName(document.querySelector('input[name="gender"]:checked').value, document.getElementById('birthdate').value);
+
+    document.querySelector("input#birthdate").value = null;
+}
+
+window.addEventListener("load", () => {
+    document.querySelector("form#akan-query-detail-form").addEventListener("submit", handleAkanQuerySubmit);
+});
+
 module.exports = getAkanName;
+
