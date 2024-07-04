@@ -110,14 +110,19 @@ input[type="radio"] {
 }
 
 /* Style for submit button */
-input[type="submit"] {
-    background-color: #007bff;
+button {
+    background-color: #000000;
     color: #fff;
     border: none;
     border-radius: 3px;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
+    font-family: cursive;
+}
+
+button:hover {
+    background-color: #9d8300;
 }
 
 /* Modal Header */
