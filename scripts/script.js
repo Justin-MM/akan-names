@@ -28,6 +28,7 @@ const getAkanName = (gender, dateOfBirth) => {
     // validate input
     if (gender && (gender === "Male" || gender === "Female")) {
         const parsedDate = parseDateOfBirth(dateOfBirth);
+        console.log(parsedDate);
         if (parsedDate === false) {
             return false;
         }
@@ -39,15 +40,9 @@ const getAkanName = (gender, dateOfBirth) => {
     return false;
 }
 
-const parseDateOfBirth = (dateOfBirth) => {
-    /*
-       CC - is the century digits. For example 1989 has CC = 19
-       YY - is the Year digits (1989 has YY = 89)
-       MM -  is the Month
-       DD - is the Day of the month 
-   */
-    
-    return [parseInt(dateStringArray[0]), parseInt(dateStringArray[1]), dateStringArray[2]];
+const parseDateOfBirth = (dateOfBirth) => {    
+    const dateStringArray = dateOfBirth.split("/");
+    return [parseInt(dateStringArray[0]), parseInt(dateStringArray[1]), parseInt(dateStringArray[2])];
 }
 
 module.exports = getAkanName;
