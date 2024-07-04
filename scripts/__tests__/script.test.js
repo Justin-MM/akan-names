@@ -11,6 +11,11 @@ test('Male akan name is returned correctly', () => {
 });
 
 test('Female akan name is returned correctly', () => {
-    const akanName = getAkanName("Female", "09/01/1960");
-    expect(akanName).toBe("Ama");
+    expect(getAkanName("Female", "01/03/1999")).toBe("Adwoa"); // monday
+    expect(getAkanName("Female", "29/02/2000")).toBe("Abenaa");
+    expect(getAkanName("Female", "01/03/2000")).toBe("Akua");
+    expect(getAkanName("Female", "18/07/2024")).toBe("Yaa");
+    expect(getAkanName("Female", "31/12/1999")).toBe("Afua");
+    expect(getAkanName("Female", "01/01/2000")).toBe("Ama");
+    expect(getAkanName("Female", "02/01/2000")).toBe("Akosua"); // sunday
 });
