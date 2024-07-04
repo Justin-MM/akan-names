@@ -1,23 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Know Your Akan Name</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
 </head>
+
 <body>
-    <h1>Know Your Akan Name</h1>
-    <p>Akan names are derived from Ghanian culture. Frequently in Ghana, children are given their first name as a 'day name' which corresponds to the day in the week they were born.</p>
-    <h3>Enter Your Birthdate and Select Gender</h3>
-    <form action="/submit" method="post">
-        <label for="birthdate">Birthdate:</label>
-        <input type="date" id="birthdate" name="birthdate" required><br><br>
+    <div class="container">
+        <div class="banner">
+            <div class="banner-img"></div>
+            <h1 class="banner-title">Know Your Akan Name</h1>
+        </div>
         
-        <label for="gender">Gender:</label>
-        <input type="radio" id="male" name="gender" value="Male" required>
-        <label for="male">Male</label>
-        <input type="radio" id="female" name="gender" value="Female">
-        <label for="female">Female</label><br><br>
-        
-        <input type="submit" value="Submit">
-    </form>
+        <p>Akan names are derived from Ghanian culture. Frequently in Ghana, children are given their first name as a
+            'day
+            name' which corresponds to the day in the week they were born.</p>
+        <h3>Enter Your Birthdate and Select Gender</h3>
+        <form action="/submit" method="post">
+            <label for="birthdate">Birthdate:</label>
+            <input type="date" id="birthdate" name="birthdate" required><br><br>
+
+            <label for="gender">Gender:</label>
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 </body>
 </html>

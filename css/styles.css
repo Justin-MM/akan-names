@@ -1,0 +1,97 @@
+body {
+    background-image: url('../images/ai-generated-8363802_1920.png');
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Style for the form container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.banner {
+    display: flex;
+    width: 100%;
+    height: 15%;
+    margin-bottom: auto;
+}
+
+.banner-img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-image: url('../images/african-pattern-7419841_1280.png');
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+    position: relative;
+    flex: none;
+}
+
+.banner-title {
+    display: flex;
+    margin-bottom: auto;
+    color: white;
+    justify-content: center;
+    font-family: cursive;
+    font-size: 40px;
+    font-weight: 800;
+    z-index: 2;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Style for labels */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Style for input fields */
+input[type="date"],
+input[type="radio"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+/* Style for submit button */
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Style for radio button labels */
+label[for="male"],
+label[for="female"] {
+    margin-right: 10px;
+}
