@@ -62,16 +62,34 @@ const handleAkanQuerySubmit = (event) => {
     const dateOfBirth = document.getElementById('birthdate').value;
     const response = getAkanName(gender, dateOfBirth);
     console.log(response);
+    const modal = document.getElementById("modal-wrapper");
+    console.log(modal);
+    modal.style.display = "block";
     if (response) {
         document.querySelector("span#dayOfTheWeekText").innerHTML = response[0];
         document.querySelector("span#akan-name").innerHTML = response[1];
-    }    
+    }
     document.querySelector("input#birthdate").value = null;
-    document.querySelector('input[name="gender"]:checked').checked=false;
+    document.querySelector('input[name="gender"]:checked').checked = false;
+}
+
+// When the user clicks on <span> (x), close the modal
+const handleModalClose = () => {
+    const modal = document.getElementById("modal-wrapper");
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    const modal = document.getElementById("modal-wrapper");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
 
 window.addEventListener("load", () => {
     document.querySelector("form#akan-query-detail-form").addEventListener("submit", handleAkanQuerySubmit);
+    document.getElementsByClassName("close")[0].addEventListener("click", handleModalClose)
 });
 
 module.exports = getAkanName;
