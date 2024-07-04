@@ -48,9 +48,12 @@ const parseDateOfBirth = (dateOfBirth) => {
 // handle submit click
 const handleAkanQuerySubmit = (event) => {
     event.preventDefault();
-    getAkanName(document.querySelector('input[name="gender"]:checked').value, document.getElementById('birthdate').value);
+    const gender = document.querySelector('input[name="gender"]:checked').value;
+    const dateOfBirth = document.getElementById('birthdate').value;
+    getAkanName(gender, dateOfBirth);
 
     document.querySelector("input#birthdate").value = null;
+    document.querySelector('input[name="gender"]:checked').checked=false;
 }
 
 window.addEventListener("load", () => {
