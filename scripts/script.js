@@ -38,7 +38,6 @@ const getAkanName = (gender, dateOfBirth) => {
     // validate input
     if (gender && (gender === "Male" || gender === "Female")) {
         const parsedDate = parseDateOfBirth(dateOfBirth);
-        console.log(parsedDate);
         if (parsedDate === false) {
             return false;
         }
@@ -61,9 +60,7 @@ const handleAkanQuerySubmit = (event) => {
     const gender = document.querySelector('input[name="gender"]:checked').value;
     const dateOfBirth = document.getElementById('birthdate').value;
     const response = getAkanName(gender, dateOfBirth);
-    console.log(response);
     const modal = document.getElementById("modal-wrapper");
-    console.log(modal);
     modal.style.display = "block";
     if (response) {
         document.querySelector("span#dayOfTheWeekText").innerHTML = response[0];
