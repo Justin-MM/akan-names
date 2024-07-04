@@ -63,7 +63,7 @@ const handleAkanQuerySubmit = (event) => {
     const modal = document.getElementById("modal-wrapper");
     modal.style.display = "block";
     if (response) {
-        document.querySelector("span#dayOfTheWeekText").innerHTML = response[0];
+        document.querySelector("span#dayOfTheWeekText").innerHTML = response[0].toUpperCase();
         document.querySelector("span#akan-name").innerHTML = response[1];
     }
     document.querySelector("input#birthdate").value = null;
